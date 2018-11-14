@@ -557,6 +557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 89678352}
+  - component: {fileID: 89678353}
   m_Layer: 0
   m_Name: ShieldManager
   m_TagString: Untagged
@@ -581,6 +582,19 @@ Transform:
   m_Father: {fileID: 1656054646}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &89678353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 89678351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04d92743e9e74315b9eab91be30832b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_rotationSpeed: 250
+  m_rotationDirection: 0
 --- !u!1 &109135348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,7 +1042,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 5, y: 5.101782}
+  m_AnchoredPosition: {x: 5, y: 5.101776}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &529418413
@@ -1076,6 +1090,7 @@ GameObject:
   - component: {fileID: 634361142}
   - component: {fileID: 634361141}
   - component: {fileID: 634361143}
+  - component: {fileID: 634361144}
   m_Layer: 5
   m_Name: MovementLeft
   m_TagString: Untagged
@@ -1176,6 +1191,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &634361144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 634361139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ad26bad291549a1afd9ee1d688fbce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_shieldManager: {fileID: 89678353}
+  m_rotationDirection: -1
 --- !u!1 &643558677
 GameObject:
   m_ObjectHideFlags: 0
@@ -3481,6 +3509,7 @@ GameObject:
   - component: {fileID: 2142799824}
   - component: {fileID: 2142799823}
   - component: {fileID: 2142799825}
+  - component: {fileID: 2142799826}
   m_Layer: 5
   m_Name: MovementRight
   m_TagString: Untagged
@@ -3581,3 +3610,16 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2142799826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2142799821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ad26bad291549a1afd9ee1d688fbce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_shieldManager: {fileID: 89678353}
+  m_rotationDirection: 1
