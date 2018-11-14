@@ -1,27 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ShieldManager : MonoBehaviour
+namespace Shields
 {
-
-	[SerializeField] private float m_rotationSpeed = 250.0f;
-	public float m_rotationDirection;
-
-	private void FixedUpdate()
+	public class ShieldManager : MonoBehaviour
 	{
-		ControlShields();
-	}
-
-	private void ControlShields()
-	{
-		float rotationDir = m_rotationDirection * m_rotationSpeed;
-		rotationDir *= Time.deltaTime;
-		transform.Rotate(0, 0, rotationDir);
-	}
-
-	public void SetRotationDirection(float i)
-	{
-		m_rotationDirection = i;
+		[SerializeField] private float m_rotationSpeed = 250.0f;
+		private float m_rotationDirection;
+		public float m_increasedRotationSpeed = 1.25f;
+	
+		private void FixedUpdate()
+		{
+			RotateShields();
+		}
+	
+		private void RotateShields()
+		{	
+			transform.Rotate(0, 0, m_rotationDirection * m_rotationSpeed * Time.deltaTime);
+		}
+	
+		public void SetRotationDirection(float i)
+		{
+			m_rotationDirection = i;
+		}
 	}
 }
