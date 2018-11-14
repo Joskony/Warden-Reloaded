@@ -10,6 +10,8 @@ namespace UI
 		private Vector2 m_startingPosition;
 		private float m_startingTime;
 
+		public GameObject player;
+		
 		public void Update()
 		{
 			if (Input.touches.Length <= 0) return;
@@ -33,8 +35,7 @@ namespace UI
 				if (swipe.magnitude < M_MIN_SWIPE_DISTANCE) return;
 
 				// Swipe action here
-				Debug.Log("Swiped");
-				Handheld.Vibrate();
+				player.SetActive(false);
 			}
 		}
 	}
