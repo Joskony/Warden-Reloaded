@@ -1203,7 +1203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_shieldManager: {fileID: 89678353}
-  m_rotationDirection: -1
+  m_rotationDirection: 1
+  m_doubleClickInterval: 0.375
 --- !u!1 &643558677
 GameObject:
   m_ObjectHideFlags: 0
@@ -3622,4 +3623,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_shieldManager: {fileID: 89678353}
-  m_rotationDirection: 1
+  m_rotationDirection: -1
+  m_doubleClickInterval: 0.375

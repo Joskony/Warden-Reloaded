@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -11,10 +10,14 @@ public class MovementButton : MonoBehaviour, IPointerUpHandler, IPointerDownHand
 {
 	public ShieldManager m_shieldManager;
 	
-	public float m_rotationDirection;
 	private ShieldMovementEvent m_shieldMovementEvent;
 	private float m_startingRotationDirection;
+	public float m_rotationDirection;
 
+	private int m_clickCount;
+	private float m_doubleClickInterval = 0.25f;
+	private float m_doubleClickRotationSpeedModifier = 1.5f;
+	
 	private void Start()
 	{
 		m_startingRotationDirection = m_rotationDirection;
@@ -31,16 +34,34 @@ public class MovementButton : MonoBehaviour, IPointerUpHandler, IPointerDownHand
 	}
 
 	public void OnPointerUp(PointerEventData eventData)
-	{	
+	{
 		m_rotationDirection = 0;
 		m_shieldMovementEvent.Invoke(m_rotationDirection);
-		Debug.Log("Up!");
 	}
 
 	public void OnPointerDown(PointerEventData eventData)
-	{	
-		m_rotationDirection = m_startingRotationDirection;
-		m_shieldMovementEvent.Invoke(m_rotationDirection);
-		Debug.Log("Turn!");
+	{
+		m_clickCount++;
+
+		if (m_clickCount == 1)
+		{
+			m_rotationDirection = m_startingRotationDirection;
+			m_shieldMovementEvent.Invoke(m_rotationDirection);
+			StartCoroutine(DoubleClickInterval());
+		}
+	}
+
+	private IEnumerator DoubleClickInterval()
+	{
+		yield return new WaitForSeconds(m_doubleClickInterval);
+
+		if (m_clickCount > 1)
+		{
+			m_rotationDirection = m_startingRotationDirection * m_doubleClickRotationSpeedModifier;
+			m_shieldMovementEvent.Invoke(m_rotationDirection);
+		}
+
+		yield return new WaitForSeconds(0.05f);
+		m_clickCount = 0;
 	}
 }
