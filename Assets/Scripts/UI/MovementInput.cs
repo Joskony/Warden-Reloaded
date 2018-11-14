@@ -17,7 +17,7 @@ namespace UI
 		private float m_startingRotationDirection;
 		private ShieldMovementEvent m_shieldMovementEvent;
 
-		private const float m_doubleClickInterval = 0.25f;
+		private const float M_DOUBLE_CLICK_INTERVAL = 0.25f;
 		private float m_lastClick;
 
 		private void Start()
@@ -40,7 +40,7 @@ namespace UI
 
 		public void OnPointerDown(PointerEventData eventData)
 		{
-			if (m_lastClick + m_doubleClickInterval > Time.time)
+			if (m_lastClick + M_DOUBLE_CLICK_INTERVAL > Time.time)
 				m_rotationDirection = m_startingRotationDirection * m_shieldManager.m_increasedRotationSpeed;
 			else
 			{
