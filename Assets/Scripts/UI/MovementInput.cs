@@ -9,7 +9,7 @@ namespace UI
 	[System.Serializable]
 	public class ShieldMovementEvent : UnityEvent<float> { }
 
-	public class MovementButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
+	public class MovementInput : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 	{
 		public ShieldManager m_shieldManager;
 
