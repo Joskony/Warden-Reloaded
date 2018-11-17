@@ -11,8 +11,8 @@ namespace Shields
 		private int m_shieldPositionGauge;
 		private const int m_shieldPositionGaugeExtendedThreshold = 25;
 		private const int m_shieldPositionGaugeRetractedThreshold = -25;
-		private enum ShieldPosition {Default, Extended, Retracted}
-		private ShieldPosition m_shieldPosition = ShieldPosition.Default;
+		public enum ShieldPosition {Default, Extended, Retracted}
+		public ShieldPosition m_shieldPosition = ShieldPosition.Default;
 		
 		[SerializeField] private float m_rotationSpeed = 250.0f;
 		private float m_rotationDirection;
@@ -86,10 +86,12 @@ namespace Shields
 		public void ToggleRetractedState()
 		{
 			m_retract = !m_retract;
+			m_extend = false;
 		}
 
 		public void ToggleExtendedState()
 		{
+			m_retract = false;
 			m_extend = !m_extend;
 		}
 
