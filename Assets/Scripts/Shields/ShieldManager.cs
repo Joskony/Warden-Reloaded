@@ -5,11 +5,12 @@ namespace Shields
 {
 	public class ShieldManager : MonoBehaviour
 	{
-
 		[SerializeField] private Shield[] m_shields;
+		private bool m_retract;
+		private bool m_extend;
 		private int m_shieldPositionGauge;
-		private int m_shieldPositionGaugeExtendedThreshold = 50;
-		private int m_shieldPositionGaugeRetractedThreshold = -50;
+		private const int m_shieldPositionGaugeExtendedThreshold = 25;
+		private const int m_shieldPositionGaugeRetractedThreshold = -25;
 		private enum ShieldPosition {Default, Extended, Retracted}
 		private ShieldPosition m_shieldPosition = ShieldPosition.Default;
 		
@@ -19,7 +20,7 @@ namespace Shields
 
 		private void Update()
 		{
-			MoveShieldsInput();
+			UpdateShieldState();
 		}
 
 		private void FixedUpdate()
@@ -38,8 +39,8 @@ namespace Shields
 			m_rotationDirection = i;
 		}
 		
-		void MoveShields() {
-
+		private void MoveShields() 
+		{
 			if (m_shieldPositionGauge >= m_shieldPositionGaugeExtendedThreshold || m_shieldPositionGauge <= m_shieldPositionGaugeRetractedThreshold)
 				m_shieldPosition = ShieldPosition.Default;
 		
@@ -52,46 +53,62 @@ namespace Shields
 			else if (m_shieldPosition == ShieldPosition.Retracted)
 				foreach (Shield shield in m_shields)
 					shield.MoveToRetracted ();
-
 		}
 		
-		private void MoveShieldsInput() {
-	
-			if (Input.GetKeyUp(KeyCode.Q) && m_shieldPositionGauge != m_shieldPositionGaugeExtendedThreshold) 
+		private void UpdateShieldState() 
+		{
+			if (m_extend && m_shieldPositionGauge != m_shieldPositionGaugeExtendedThreshold) 
 			{
-				if (m_shieldPosition == ShieldPosition.Default || m_shieldPosition == ShieldPosition.Retracted) {
+				if (m_shieldPosition == ShieldPosition.Default || m_shieldPosition == ShieldPosition.Retracted) 
+				{
 					m_shieldPosition = ShieldPosition.Extended;
 					StartCoroutine (GainExtendedPoints ());
 				}
 				else if (m_shieldPosition == ShieldPosition.Extended)
 					m_shieldPosition = ShieldPosition.Default;
+
+				m_extend = false;
 			}
-			if (Input.GetKeyUp(KeyCode.E) && m_shieldPositionGauge != m_shieldPositionGaugeRetractedThreshold) 
+			if (m_retract && m_shieldPositionGauge != m_shieldPositionGaugeRetractedThreshold) 
 			{
-				if (m_shieldPosition == ShieldPosition.Default || m_shieldPosition == ShieldPosition.Extended) {
+				if (m_shieldPosition == ShieldPosition.Default || m_shieldPosition == ShieldPosition.Extended) 
+				{
 					m_shieldPosition = ShieldPosition.Retracted;
 					StartCoroutine (GainRetractedPoints ());
 				}
 				else if (m_shieldPosition == ShieldPosition.Retracted)
 					m_shieldPosition = ShieldPosition.Default;
-			}
 
+				m_retract = false;
+			}
 		}
-		
-		private IEnumerator GainExtendedPoints() {
-			while (m_shieldPositionGauge <= m_shieldPositionGaugeExtendedThreshold && m_shieldPosition == ShieldPosition.Extended) {
+
+		public void ToggleRetractedState()
+		{
+			m_retract = !m_retract;
+		}
+
+		public void ToggleExtendedState()
+		{
+			m_extend = !m_extend;
+		}
+
+		private IEnumerator GainExtendedPoints() 
+		{
+			while (m_shieldPositionGauge <= m_shieldPositionGaugeExtendedThreshold && m_shieldPosition == ShieldPosition.Extended) 
+			{
 				m_shieldPositionGauge++;
 				yield return new WaitForSeconds (0.25f);
 			}
-
 		}
 
-		private IEnumerator GainRetractedPoints() {
-			while (m_shieldPositionGauge >= m_shieldPositionGaugeRetractedThreshold && m_shieldPosition == ShieldPosition.Retracted) {
+		private IEnumerator GainRetractedPoints() 
+		{
+			while (m_shieldPositionGauge >= m_shieldPositionGaugeRetractedThreshold && m_shieldPosition == ShieldPosition.Retracted) 
+			{
 				m_shieldPositionGauge--;
 				yield return new WaitForSeconds (0.25f);
 			}
-
 		}
 	}
 }
