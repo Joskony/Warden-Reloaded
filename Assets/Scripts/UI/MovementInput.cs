@@ -11,9 +11,9 @@ namespace UI
 
 	public class MovementInput : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 	{
-		public ShieldManager m_shieldManager;
-
+		[SerializeField] private ShieldManager m_shieldManager;
 		[SerializeField] private float m_rotationDirection;
+		
 		private float m_startingRotationDirection;
 		private ShieldMovementEvent m_shieldMovementEvent;
 

@@ -5,23 +5,14 @@ namespace Shields
 	public class Shield : MonoBehaviour
 	{
 		private const float M_POSITION_TRANSITION_SPEED = 0.025f;
-		[SerializeField] private Transform m_defaultPosition;
-		[SerializeField] private Transform m_extendedPosition;
-		[SerializeField] private Transform m_retractedPosition;
 		
-		public void MoveToDefault() 
+		public Transform m_defaultPosition;
+		public Transform m_extendedPosition;
+		public Transform m_retractedPosition;
+
+		public void MoveToState(Transform _statePosition)
 		{
-			transform.position = Vector3.MoveTowards (transform.position, m_defaultPosition.position, M_POSITION_TRANSITION_SPEED);
-		}
-	
-		public void MoveToExtended() 
-		{
-			transform.position = Vector3.MoveTowards (transform.position, m_extendedPosition.position, M_POSITION_TRANSITION_SPEED);
-		}
-	
-		public void MoveToRetracted() 
-		{
-			transform.position = Vector3.MoveTowards (transform.position, m_retractedPosition.position, M_POSITION_TRANSITION_SPEED);
+			transform.position = Vector3.MoveTowards(transform.position, _statePosition.position, M_POSITION_TRANSITION_SPEED);
 		}
 	}
 }

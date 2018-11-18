@@ -22,15 +22,7 @@ namespace UI
 
         private void Update()
         {
-            if (m_shieldManager.m_shieldPosition == m_shieldPosition)
-            {
-                m_InputImage.sprite = m_toggleOn;
-            }
-            else
-            {
-                m_InputImage.sprite = m_toggleOff;
-            }
+            m_InputImage.sprite = m_shieldManager.m_shieldPosition == m_shieldPosition ? m_toggleOn : m_toggleOff;
         }
     }
 }
-
