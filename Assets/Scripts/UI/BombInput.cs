@@ -15,7 +15,7 @@ namespace UI
         [SerializeField] private GameObject m_bomb;
         [SerializeField] private GameObject[] m_bombCharges = new GameObject[3];
 		 
-        public void Update()
+        private void Update()
         {   
             if (Input.touches.Length <= 0) return;
  

@@ -38,9 +38,9 @@ namespace Shields
 			transform.Rotate(0, 0, m_rotationDirection * M_ROTATION_SPEED * Time.deltaTime);
 		}
 	
-		public void SetRotationDirection(float i)
+		public void SetRotationDirection(float _i)
 		{
-			m_rotationDirection = i;
+			m_rotationDirection = _i;
 		}
 		
 		private void MoveShields() 
