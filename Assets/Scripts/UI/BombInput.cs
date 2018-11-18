@@ -13,13 +13,10 @@ namespace UI
 
         private int m_amountOfBombs = 3;
         [SerializeField] private GameObject m_bomb;
-        [SerializeField]private GameObject[] m_bombCharges = new GameObject[3];
+        [SerializeField] private GameObject[] m_bombCharges = new GameObject[3];
 		 
         public void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-                UseBomb();
-            
+        {   
             if (Input.touches.Length <= 0) return;
  
             foreach (var touch in Input.touches)
@@ -45,7 +42,7 @@ namespace UI
             }
         }
 
-        public void UseBomb()
+        private void UseBomb()
         {
             if (m_amountOfBombs <= 0 || m_bomb.activeSelf) return;
             m_amountOfBombs--;
