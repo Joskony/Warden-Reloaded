@@ -1655,9 +1655,10 @@ GameObject:
   - component: {fileID: 763665361}
   - component: {fileID: 763665362}
   - component: {fileID: 763665363}
+  - component: {fileID: 763665364}
   m_Layer: 0
   m_Name: Shield_4
-  m_TagString: Untagged
+  m_TagString: Blocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1735,6 +1736,31 @@ MonoBehaviour:
   m_defaultPosition: {fileID: 4366843}
   m_extendedPosition: {fileID: 198122728}
   m_retractedPosition: {fileID: 1156999783}
+--- !u!61 &763665364
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 763665360}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.06, y: 2.12}
+    newSize: {x: 1.06, y: 2.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.06, y: 2.12}
+  m_EdgeRadius: 0
 --- !u!1 &842794394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,9 +1996,10 @@ GameObject:
   - component: {fileID: 921560126}
   - component: {fileID: 921560127}
   - component: {fileID: 921560128}
+  - component: {fileID: 921560129}
   m_Layer: 0
   m_Name: Shield_2
-  m_TagString: Untagged
+  m_TagString: Blocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2050,6 +2077,31 @@ MonoBehaviour:
   m_defaultPosition: {fileID: 166865855}
   m_extendedPosition: {fileID: 92658759}
   m_retractedPosition: {fileID: 1004785214}
+--- !u!61 &921560129
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 921560125}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.06, y: 2.12}
+    newSize: {x: 1.06, y: 2.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.06, y: 2.12}
+  m_EdgeRadius: 0
 --- !u!1 &957829293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,9 +3128,10 @@ GameObject:
   - component: {fileID: 1502770297}
   - component: {fileID: 1502770298}
   - component: {fileID: 1502770299}
+  - component: {fileID: 1502770300}
   m_Layer: 0
   m_Name: Shield_1
-  m_TagString: Untagged
+  m_TagString: Blocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3156,6 +3209,31 @@ MonoBehaviour:
   m_defaultPosition: {fileID: 89376034}
   m_extendedPosition: {fileID: 682417539}
   m_retractedPosition: {fileID: 1632381799}
+--- !u!61 &1502770300
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1502770296}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.06, y: 2.12}
+    newSize: {x: 1.06, y: 2.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.06, y: 2.12}
+  m_EdgeRadius: 0
 --- !u!1 &1548388880
 GameObject:
   m_ObjectHideFlags: 0
@@ -3168,7 +3246,7 @@ GameObject:
   - component: {fileID: 1548388883}
   m_Layer: 0
   m_Name: BombShockwave
-  m_TagString: Untagged
+  m_TagString: Blocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3436,9 +3514,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1656054646}
   - component: {fileID: 1656054645}
+  - component: {fileID: 1656054647}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3504,6 +3583,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1656054647
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1656054644}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.56
 --- !u!1 &1702076544
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,9 +3608,10 @@ GameObject:
   - component: {fileID: 1702076545}
   - component: {fileID: 1702076546}
   - component: {fileID: 1702076547}
+  - component: {fileID: 1702076548}
   m_Layer: 0
   m_Name: Shield_3
-  m_TagString: Untagged
+  m_TagString: Blocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3594,6 +3689,31 @@ MonoBehaviour:
   m_defaultPosition: {fileID: 1372811704}
   m_extendedPosition: {fileID: 1062011304}
   m_retractedPosition: {fileID: 266069460}
+--- !u!61 &1702076548
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1702076544}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.06, y: 2.12}
+    newSize: {x: 1.06, y: 2.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.06, y: 2.12}
+  m_EdgeRadius: 0
 --- !u!1 &1710282442
 GameObject:
   m_ObjectHideFlags: 0
