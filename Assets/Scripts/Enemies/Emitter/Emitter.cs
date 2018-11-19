@@ -30,8 +30,7 @@ namespace Enemies.Emitter
 
         private void Update()
         {
-            if (m_ProjectileIndex == m_ProjectilePool.Length)
-                m_ProjectileIndex = 0;
+            if (m_ProjectileIndex == m_ProjectilePool.Length) m_ProjectileIndex = 0;
 
             if (!(Time.time > m_FireRate)) return;
             FireNextProjectile();

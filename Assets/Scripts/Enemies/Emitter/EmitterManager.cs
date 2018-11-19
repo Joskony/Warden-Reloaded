@@ -5,7 +5,6 @@ namespace Enemies.Emitter
     public class EmitterManager : MonoBehaviour
     {
         private readonly Vector3 m_rotationTarget = Vector3.zero;
-        // ReSharper disable once InconsistentNaming
         private const float m_rotationChangeDirectionMin = 3;
         private const float m_rotationChangeDirectionMax = 8;
         private float m_rotationChangeDirectionTime;
