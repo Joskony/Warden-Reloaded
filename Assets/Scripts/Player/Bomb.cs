@@ -5,9 +5,9 @@ namespace Player
 {
     public class Bomb : MonoBehaviour
     {
+        private const int M_FRAME_COUNT = 45;
         private const float M_INITIAL_SCALE = 0.225f;
         private const float M_TARGET_SCALE = 4.5f;
-        private const int M_FRAME_COUNT = 45;
         private const float M_GROW_TIME = 0.025f;
         private const float M_DELTA_TIME = M_GROW_TIME / M_FRAME_COUNT;
         private const float M_SIZE_INCREASE = (M_TARGET_SCALE - M_INITIAL_SCALE) / M_FRAME_COUNT;

@@ -10,7 +10,7 @@ namespace Enemies.Emitter
 
         private float m_FireRate;
         private const int M_FIRE_RATE_MAX = 1;
-        private const int M_FIRE_RATE_MIN = 15;
+        private const int M_FIRE_RATE_MIN = 20;
 
         [SerializeField] private GameObject m_ProjectileHolder;
 

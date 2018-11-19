@@ -5,7 +5,7 @@ namespace Shields
 {
 	public class ShieldManager : MonoBehaviour
 	{
-		[SerializeField] private Shield[] m_shields;
+		private Shield[] m_shields;
 		
 		private bool m_retractInput;
 		private bool m_extendInput;
@@ -21,6 +21,11 @@ namespace Shields
 		private float m_rotationDirection;
 		private const float M_ROTATION_SPEED = 250.0f;
 		public readonly float m_increasedRotationSpeed = 1.25f;
+
+		private void Awake()
+		{
+			m_shields = GetComponentsInChildren<Shield>();
+		}
 
 		private void Update()
 		{

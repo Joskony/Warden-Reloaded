@@ -6,7 +6,7 @@ namespace UI
     {
         private const float M_MAX_SWIPE_TIME = 0.25f; 
         private const float M_MIN_SWIPE_DISTANCE = 0.15f;
-        private const float M_MAX_SWIPE_DISTANCE = 0.3f;
+        private const float M_MAX_SWIPE_DISTANCE = 0.35f;
  
         private Vector2 m_startingPosition;
         private float m_startingTime;

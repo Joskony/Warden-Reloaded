@@ -302,6 +302,18 @@ MonoBehaviour:
   m_Projectile: {fileID: 114533127935503660, guid: 30abd2bb805e94661a8879b594893176,
     type: 2}
   m_ProjectileHolder: {fileID: 1829491331}
+--- !u!114 &763665363 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114615335846186442, guid: bedbe93b7345816468786c5ae422b8f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1338225370}
+  m_Script: {fileID: 11500000, guid: 35643a672e97c494ea19a42e228b6d5d, type: 3}
+--- !u!114 &921560128 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114888436090669852, guid: bedbe93b7345816468786c5ae422b8f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1338225370}
+  m_Script: {fileID: 11500000, guid: 35643a672e97c494ea19a42e228b6d5d, type: 3}
 --- !u!1001 &1338225370
 Prefab:
   m_ObjectHideFlags: 0
@@ -309,6 +321,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114628073401806872, guid: bedbe93b7345816468786c5ae422b8f1,
+        type: 2}
+      propertyPath: m_shields.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4273125605575458, guid: bedbe93b7345816468786c5ae422b8f1, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -341,14 +358,55 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114628073401806872, guid: bedbe93b7345816468786c5ae422b8f1,
+        type: 2}
+      propertyPath: m_shields.Array.data[0]
+      value: 
+      objectReference: {fileID: 1502770299}
+    - target: {fileID: 114628073401806872, guid: bedbe93b7345816468786c5ae422b8f1,
+        type: 2}
+      propertyPath: m_shields.Array.data[1]
+      value: 
+      objectReference: {fileID: 921560128}
+    - target: {fileID: 114628073401806872, guid: bedbe93b7345816468786c5ae422b8f1,
+        type: 2}
+      propertyPath: m_shields.Array.data[2]
+      value: 
+      objectReference: {fileID: 1702076547}
+    - target: {fileID: 114628073401806872, guid: bedbe93b7345816468786c5ae422b8f1,
+        type: 2}
+      propertyPath: m_shields.Array.data[3]
+      value: 
+      objectReference: {fileID: 763665363}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bedbe93b7345816468786c5ae422b8f1, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1502770299 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114341330118693204, guid: bedbe93b7345816468786c5ae422b8f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1338225370}
+  m_Script: {fileID: 11500000, guid: 35643a672e97c494ea19a42e228b6d5d, type: 3}
 --- !u!1 &1548388880 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1475549435193976, guid: bedbe93b7345816468786c5ae422b8f1,
     type: 2}
   m_PrefabInternal: {fileID: 1338225370}
+--- !u!58 &1548388884
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1548388880}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 10.24
 --- !u!1001 &1685385196
 Prefab:
   m_ObjectHideFlags: 0
@@ -391,6 +449,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0675be4d063174863b70714ba4e79ce5, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1702076547 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114820608489741288, guid: bedbe93b7345816468786c5ae422b8f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1338225370}
+  m_Script: {fileID: 11500000, guid: 35643a672e97c494ea19a42e228b6d5d, type: 3}
 --- !u!1 &1710282442 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1792816915923424, guid: ccbbfeccd52e94477822cd981098140a,

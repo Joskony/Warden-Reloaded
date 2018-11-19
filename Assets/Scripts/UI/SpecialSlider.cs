@@ -19,8 +19,7 @@ namespace UI
 
         private void Update()
         {
-            float changingSliderValue = Mathf.Lerp(m_slider.value, m_shieldManager.m_shieldPositionGauge, M_SLIDER_FILL_SPEED * Time.deltaTime);
-            m_slider.value = changingSliderValue;
+            m_slider.value = Mathf.Lerp(m_slider.value, m_shieldManager.m_shieldPositionGauge, M_SLIDER_FILL_SPEED * Time.deltaTime);
         }
     }
 }

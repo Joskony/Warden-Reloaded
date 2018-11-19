@@ -12,14 +12,12 @@ namespace Enemies.Projectile
 
         private void Update()
         {
-            if (transform.position == m_Target)
-                gameObject.SetActive(false);
+            if (transform.position == m_Target) gameObject.SetActive(false);
         }
 
         private void FixedUpdate()
         {
-            float step = m_Speed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, m_Target, step);
+            transform.position = Vector2.MoveTowards(transform.position, m_Target, m_Speed * Time.deltaTime);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
