@@ -32,7 +32,7 @@ namespace Enemies.Emitter
 
         private void ChangeDirection()
         {
-            var decider = Random.Range(0, 2);
+            int decider = Random.Range(0, 2);
             if (decider == 0) m_rotationSpeed *= -1;
         }
     }
