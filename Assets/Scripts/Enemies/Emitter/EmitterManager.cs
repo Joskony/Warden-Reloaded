@@ -4,7 +4,6 @@ namespace Enemies.Emitter
 {
     public class EmitterManager : MonoBehaviour
     {
-        private readonly Vector3 m_rotationTarget = Vector3.zero;
         private const float m_rotationChangeDirectionMin = 3;
         private const float m_rotationChangeDirectionMax = 8;
         private float m_rotationChangeDirectionTime;
@@ -26,7 +25,7 @@ namespace Enemies.Emitter
 
         private void FixedUpdate()
         {
-            transform.RotateAround(m_rotationTarget, Vector3.back, m_rotationSpeed * Time.deltaTime);
+            transform.RotateAround(Vector3.zero, Vector3.back, m_rotationSpeed * Time.deltaTime);
         }
 
         private void ChangeDirection()

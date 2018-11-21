@@ -8,16 +8,9 @@ namespace Enemies.Projectile
     {
         private const float m_Speed = 2f;
 
-        private readonly Vector3 m_Target = Vector3.zero;
-
-        private void Update()
-        {
-            if (transform.position == m_Target) gameObject.SetActive(false);
-        }
-
         private void FixedUpdate()
         {
-            transform.position = Vector2.MoveTowards(transform.position, m_Target, m_Speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, Vector3.zero, m_Speed * Time.deltaTime);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
