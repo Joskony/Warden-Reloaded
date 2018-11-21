@@ -1,25 +1,53 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Enemies.Emitter
 {
+    [Serializable]
+    public class EmitterGroups
+    {
+        public GameObject[] m_Emitter;
+    }
+    
     public class EmitterManager : MonoBehaviour
     {
-        private const float m_rotationChangeDirectionMin = 3;
-        private const float m_rotationChangeDirectionMax = 8;
+        public EmitterGroups[] m_Emitter;
+        
+        private const float M_ROTATION_CHANGE_DIRECTION_MIN = 3;
+        private const float M_ROTATION_CHANGE_DIRECTION_MAX = 8;
         private float m_rotationChangeDirectionTime;
-        private float m_rotationSpeed = 25;
+
+        private int m_ProjectileIndex;
+        [SerializeField] private Projectile.Projectile m_Projectile;
+        private readonly Projectile.Projectile[] m_ProjectilePool = new Projectile.Projectile[128];
+
+        [HideInInspector] public float m_rotationSpeed = 25;
+        [HideInInspector] public float m_projectileSpeed = 2;
+        [HideInInspector] public int m_maxFireRate = 20;
+
+        [SerializeField] private GameObject m_ProjectileHolder;
 
         private void Start()
         {
-            m_rotationChangeDirectionTime = Random.Range(m_rotationChangeDirectionMin, m_rotationChangeDirectionMax);
+            for (int i = 0; i < m_ProjectilePool.Length; i++)
+            {
+                m_ProjectilePool[i] = Instantiate(m_Projectile, m_ProjectileHolder.transform.position, Quaternion.identity, m_ProjectileHolder.transform);
+                m_ProjectilePool[i].gameObject.SetActive(false);
+            }
+            
+            m_rotationChangeDirectionTime = Random.Range(M_ROTATION_CHANGE_DIRECTION_MIN, M_ROTATION_CHANGE_DIRECTION_MAX);
+
+            StartCoroutine(StartShootingProjectiles());
         }
 
         private void Update()
-        {
+        {                
             m_rotationChangeDirectionTime -= Time.deltaTime;
 
             if (!(m_rotationChangeDirectionTime <= 0.0f)) return;
-            m_rotationChangeDirectionTime = Random.Range(m_rotationChangeDirectionMin, m_rotationChangeDirectionMax);
+            m_rotationChangeDirectionTime = Random.Range(M_ROTATION_CHANGE_DIRECTION_MIN, M_ROTATION_CHANGE_DIRECTION_MAX);
             ChangeDirection();
         }
 
@@ -32,6 +60,31 @@ namespace Enemies.Emitter
         {
             int decider = Random.Range(0, 2);
             if (decider == 0) m_rotationSpeed *= -1;
+        }
+
+        private void FireNextProjectile(Transform _emitter)
+        {
+            if (m_ProjectileIndex == m_ProjectilePool.Length) m_ProjectileIndex = 0;
+            m_ProjectilePool[m_ProjectileIndex].m_Speed = m_projectileSpeed;
+            m_ProjectilePool[m_ProjectileIndex].gameObject.transform.position = _emitter.position;
+            m_ProjectilePool[m_ProjectileIndex].gameObject.SetActive(true);
+            m_ProjectileIndex++;
+        }
+
+        private IEnumerator StartShootingProjectiles()
+        {
+            while (true)
+            {
+                foreach (EmitterGroups emitterGroups in m_Emitter)
+                {
+                    foreach (GameObject emitter in emitterGroups.m_Emitter)
+                    {
+                        FireNextProjectile(emitter.transform);
+                        float nextFire = Random.Range(0, m_maxFireRate);
+                        yield return new WaitForSeconds(nextFire / 10);
+                    }
+                }
+            }
         }
     }
 }

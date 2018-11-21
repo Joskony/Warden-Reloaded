@@ -4,7 +4,7 @@ namespace Shields
 {
 	public class Shield : MonoBehaviour
 	{
-		private const float M_POSITION_TRANSITION_SPEED = 0.025f;
+		private const float M_POSITION_TRANSITION_SPEED = 1.25f;
 		
 		public Transform m_defaultPosition;
 		public Transform m_extendedPosition;
@@ -12,7 +12,7 @@ namespace Shields
 
 		public void MoveToState(Transform _statePosition)
 		{
-			transform.position = Vector3.MoveTowards(transform.position, _statePosition.position, M_POSITION_TRANSITION_SPEED);
+			transform.position = Vector3.MoveTowards(transform.position, _statePosition.position, M_POSITION_TRANSITION_SPEED * Time.deltaTime);
 		}
 	}
 }

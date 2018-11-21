@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-
 using _Overhead;
 
 namespace Enemies.Projectile
 {
     public class Projectile : MonoBehaviour
     {
-        private const float m_Speed = 2f;
+        public float m_Speed;
 
         private void FixedUpdate()
         {
