@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -28,7 +29,7 @@ namespace Enemies.Emitter
         [HideInInspector] public int m_maxFireRate = 20;
 
         [SerializeField] private GameObject m_ProjectileHolder;
-
+        
         private void Start()
         {
             for (int i = 0; i < m_ProjectilePool.Length; i++)
@@ -77,9 +78,10 @@ namespace Enemies.Emitter
             {
                 foreach (EmitterGroups emitterGroups in m_Emitter)
                 {
-                    foreach (GameObject emitter in emitterGroups.m_Emitter)
+                    System.Random random = new System.Random();
+                    foreach (int a in Enumerable.Range(0, emitterGroups.m_Emitter.Length).OrderBy(x => random.Next()))
                     {
-                        FireNextProjectile(emitter.transform);
+                        FireNextProjectile(emitterGroups.m_Emitter[a].transform);
                         float nextFire = Random.Range(0, m_maxFireRate);
                         yield return new WaitForSeconds(nextFire / 10);
                     }
