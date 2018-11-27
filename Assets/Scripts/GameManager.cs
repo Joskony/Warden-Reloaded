@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
 
     private Coroutine m_emitterShootingRoutine;
 
+    private float m_initialTime;
+    [HideInInspector] public float m_currentGameTime;
+    [HideInInspector] public float m_bestGameTime;
+
     private void Start()
     {
         StartCoroutine(GameLoop());
@@ -36,8 +40,13 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator GameRunning()
     {
+        m_initialTime = Time.time;
+        
         while (m_player.isAlive)
         {
+            m_currentGameTime = Time.time - m_initialTime;
+            if (m_bestGameTime <= m_currentGameTime)
+                m_bestGameTime = m_currentGameTime;
             yield return null;
         }
     }
