@@ -12,8 +12,5 @@ namespace Player
 			if (other.gameObject.CompareTag(Tags.M_PROJECTILE_TAG))
 				isAlive = false;
 		}
-		
 	}
 }
-
-
