@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections;
+using System.Security.Policy;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -26,6 +27,7 @@ namespace Enemies.Emitter
 
         [HideInInspector] public float m_rotationSpeed = 25;
         [HideInInspector] public float m_projectileSpeed = 2;
+        [HideInInspector] public int m_minFireRate = 5;
         [HideInInspector] public int m_maxFireRate = 20;
 
         [SerializeField] private GameObject m_ProjectileHolder;
