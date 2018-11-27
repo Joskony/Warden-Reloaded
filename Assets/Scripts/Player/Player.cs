@@ -5,7 +5,7 @@ namespace Player
 {
 	public class Player : MonoBehaviour
 	{
-		public bool isAlive = true;
+		[HideInInspector] public bool isAlive = true;
 		
 		private void OnTriggerEnter2D(Collider2D other)
 		{
