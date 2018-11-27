@@ -22,7 +22,7 @@ namespace Enemies.Emitter
 
         private int m_ProjectileIndex;
         [SerializeField] private Projectile.Projectile m_Projectile;
-        private readonly Projectile.Projectile[] m_ProjectilePool = new Projectile.Projectile[128];
+        public readonly Projectile.Projectile[] m_ProjectilePool = new Projectile.Projectile[128];
 
         [HideInInspector] public float m_rotationSpeed = 25;
         [HideInInspector] public float m_projectileSpeed = 2;
@@ -39,8 +39,6 @@ namespace Enemies.Emitter
             }
             
             m_rotationChangeDirectionTime = Random.Range(M_ROTATION_CHANGE_DIRECTION_MIN, M_ROTATION_CHANGE_DIRECTION_MAX);
-
-            StartCoroutine(StartShootingProjectiles());
         }
 
         private void Update()
@@ -72,7 +70,7 @@ namespace Enemies.Emitter
             m_ProjectileIndex++;
         }
 
-        private IEnumerator StartShootingProjectiles()
+        public IEnumerator StartShootingProjectiles()
         {
             while (true)
             {
