@@ -10,8 +10,8 @@ namespace Player
 		private void OnTriggerEnter2D(Collider2D other)
 		{
 			if (!other.gameObject.CompareTag(Tags.M_PROJECTILE_TAG)) return;
-			isAlive = false;
-			gameObject.SetActive(false);
+			// isAlive = false;
+			// gameObject.SetActive(false);
 		}
 	}
 }

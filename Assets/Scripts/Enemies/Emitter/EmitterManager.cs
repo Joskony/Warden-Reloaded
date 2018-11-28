@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Collections;
-using System.Security.Policy;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -44,7 +43,9 @@ namespace Enemies.Emitter
         }
 
         private void Update()
-        {                
+        {        
+            Debug.Log(m_maxFireRate);
+            
             m_rotationChangeDirectionTime -= Time.deltaTime;
 
             if (!(m_rotationChangeDirectionTime <= 0.0f)) return;

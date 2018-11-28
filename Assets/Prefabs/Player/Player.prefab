@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 4273125605575458}
   - component: {fileID: 212343857853892698}
   - component: {fileID: 58598539983574558}
+  - component: {fileID: 114361907944217924}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -228,6 +229,7 @@ GameObject:
   - component: {fileID: 4162304965015410}
   - component: {fileID: 212592927287631830}
   - component: {fileID: 114954776391364800}
+  - component: {fileID: 58141868335279916}
   m_Layer: 0
   m_Name: BombShockwave
   m_TagString: Blocker
@@ -694,6 +696,21 @@ Transform:
   m_Father: {fileID: 4770804587567218}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!58 &58141868335279916
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475549435193976}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 10.24
 --- !u!58 &58598539983574558
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -823,6 +840,18 @@ MonoBehaviour:
   m_defaultPosition: {fileID: 4399142067770416}
   m_extendedPosition: {fileID: 4505522303995044}
   m_retractedPosition: {fileID: 4043802744022662}
+--- !u!114 &114361907944217924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1240878627613856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c245e19370cd0548bddfcfb7da94d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAlive: 1
 --- !u!114 &114615335846186442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -848,11 +877,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04d92743e9e74315b9eab91be30832b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_shields:
-  - {fileID: 114341330118693204}
-  - {fileID: 114888436090669852}
-  - {fileID: 114820608489741288}
-  - {fileID: 114615335846186442}
   m_shieldPositionGauge: 0
   m_shieldPosition: 0
 --- !u!114 &114820608489741288

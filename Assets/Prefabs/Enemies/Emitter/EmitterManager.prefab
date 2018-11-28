@@ -291,6 +291,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aeea58c3e2b943dd8151e764efa9b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Emitter:
+  - m_Emitter:
+    - {fileID: 1455445447496490}
+    - {fileID: 1361241225451782}
+    - {fileID: 1394863483247486}
+    - {fileID: 1792816915923424}
+  - m_Emitter:
+    - {fileID: 1028901388078828}
+    - {fileID: 1872480209711184}
+    - {fileID: 1145031305839022}
+    - {fileID: 1304134564731842}
+  m_Projectile: {fileID: 114533127935503660, guid: 30abd2bb805e94661a8879b594893176,
+    type: 2}
+  m_rotationSpeed: 25
+  m_projectileSpeed: 2
+  m_minFireRate: 5
+  m_maxFireRate: 20
+  m_ProjectileHolder: {fileID: 0}
 --- !u!212 &212121168552395988
 SpriteRenderer:
   m_ObjectHideFlags: 1

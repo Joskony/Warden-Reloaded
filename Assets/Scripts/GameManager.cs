@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using Enemies.Emitter;
 using Enemies.Projectile;
-using Shields;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -87,6 +86,6 @@ public class GameManager : MonoBehaviour
 
     public void DecreaseFireRate()
     {
-        Debug.Log("Difficulty Interval 3");   
+        m_emitterManager.m_maxFireRate -= 1;
     }
 }
