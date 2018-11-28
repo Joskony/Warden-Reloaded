@@ -77,16 +77,12 @@ public class GameManager : MonoBehaviour
     
     public void IncreaseRotationSpeed()
     {
-        Debug.Log("Difficulty Interval 1");
         m_emitterManager.m_rotationSpeed += Mathf.Sign(m_emitterManager.m_rotationSpeed) * M_ROTATION_SPEED_INCREASE;
-        Debug.Log(m_emitterManager.m_rotationSpeed);
     }
 
     public void IncreaseProjectileSpeed()
     {
-        Debug.Log("Difficulty Interval 2");
         m_emitterManager.m_projectileSpeed += M_PROJECTILE_SPEED_INCREASE;
-        Debug.Log(m_emitterManager.m_projectileSpeed);
     }
 
     public void DecreaseFireRate()
