@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public float m_currentGameTime;
     [HideInInspector] public float m_bestGameTime;
 
+    private const int M_FIRST_DIFFICULTY_INTERVAL = 15;
+    private const int M_SECOND_DIFFICULTY_INTERVAL = 30;
+    private const int M_THIRD_DIFFICULTY_INTERVAL = 45;
+
     private void Start()
     {
         StartCoroutine(GameLoop());
@@ -42,6 +46,10 @@ public class GameManager : MonoBehaviour
     {
         m_initialTime = Time.time;
         
+        InvokeRepeating(nameof(IncreaseRotationSpeed), M_FIRST_DIFFICULTY_INTERVAL, M_FIRST_DIFFICULTY_INTERVAL);
+        InvokeRepeating(nameof(IncreaseProjectileSpeed), M_SECOND_DIFFICULTY_INTERVAL, M_SECOND_DIFFICULTY_INTERVAL);
+        InvokeRepeating(nameof(DecreaseFireRate), M_THIRD_DIFFICULTY_INTERVAL, M_THIRD_DIFFICULTY_INTERVAL);
+        
         while (m_player.isAlive)
         {
             m_currentGameTime = Time.time - m_initialTime;
@@ -60,5 +68,20 @@ public class GameManager : MonoBehaviour
         m_emitterManager.m_rotationSpeed = 0;
         yield return new WaitForSeconds(M_GAME_END_DELAY);
         SceneManager.LoadScene(0);
+    }
+    
+    public void IncreaseRotationSpeed()
+    {
+          Debug.Log("Difficulty Interval 1");  
+    }
+
+    public void IncreaseProjectileSpeed()
+    {
+        Debug.Log("Difficulty Interval 2");  
+    }
+
+    public void DecreaseFireRate()
+    {
+        Debug.Log("Difficulty Interval 3");   
     }
 }
