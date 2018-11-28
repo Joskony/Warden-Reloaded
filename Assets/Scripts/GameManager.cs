@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Enemies.Emitter;
 using Enemies.Projectile;
+using Shields;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,7 +23,10 @@ public class GameManager : MonoBehaviour
 
     private const int M_FIRST_DIFFICULTY_INTERVAL = 15;
     private const int M_SECOND_DIFFICULTY_INTERVAL = 30;
-    private const int M_THIRD_DIFFICULTY_INTERVAL = 45;
+    private const int M_THIRD_DIFFICULTY_INTERVAL = 60;
+
+    private const float M_ROTATION_SPEED_INCREASE = 2.5f;
+    private const float M_PROJECTILE_SPEED_INCREASE = 0.2f;
 
     private void Start()
     {
@@ -73,12 +77,16 @@ public class GameManager : MonoBehaviour
     
     public void IncreaseRotationSpeed()
     {
-          Debug.Log("Difficulty Interval 1");  
+        Debug.Log("Difficulty Interval 1");
+        m_emitterManager.m_rotationSpeed += Mathf.Sign(m_emitterManager.m_rotationSpeed) * M_ROTATION_SPEED_INCREASE;
+        Debug.Log(m_emitterManager.m_rotationSpeed);
     }
 
     public void IncreaseProjectileSpeed()
     {
-        Debug.Log("Difficulty Interval 2");  
+        Debug.Log("Difficulty Interval 2");
+        m_emitterManager.m_projectileSpeed += M_PROJECTILE_SPEED_INCREASE;
+        Debug.Log(m_emitterManager.m_projectileSpeed);
     }
 
     public void DecreaseFireRate()
