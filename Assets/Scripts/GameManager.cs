@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator GameEnding()
     {
+        CancelInvoke();
         StopCoroutine(m_emitterShootingRoutine);
         m_inputBlockingPanel.SetActive(true);
         foreach (Projectile projectile in m_emitterManager.m_ProjectilePool)
