@@ -86,6 +86,6 @@ public class GameManager : MonoBehaviour
 
     public void DecreaseFireRate()
     {
-        m_emitterManager.m_maxFireRate -= 1;
+        m_emitterManager.m_maxFireRate -= 10;
     }
 }

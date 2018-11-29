@@ -26,8 +26,8 @@ namespace Enemies.Emitter
 
         [HideInInspector] public float m_rotationSpeed = 25;
         [HideInInspector] public float m_projectileSpeed = 2;
-        [HideInInspector] public int m_minFireRate = 5;
-        [HideInInspector] public int m_maxFireRate = 20;
+        [HideInInspector] public int m_minFireRate = 25;
+        [HideInInspector] public int m_maxFireRate = 200;
 
         [SerializeField] private GameObject m_ProjectileHolder;
         
@@ -44,8 +44,6 @@ namespace Enemies.Emitter
 
         private void Update()
         {        
-            Debug.Log(m_maxFireRate);
-            
             m_rotationChangeDirectionTime -= Time.deltaTime;
 
             if (!(m_rotationChangeDirectionTime <= 0.0f)) return;
@@ -83,8 +81,8 @@ namespace Enemies.Emitter
                     foreach (int a in Enumerable.Range(0, emitterGroups.m_Emitter.Length).OrderBy(x => random.Next()))
                     {
                         FireNextProjectile(emitterGroups.m_Emitter[a].transform);
-                        float nextFire = Random.Range(0, m_maxFireRate);
-                        yield return new WaitForSeconds(nextFire / 10);
+                        float nextFire = Random.Range(m_minFireRate, m_maxFireRate);
+                        yield return new WaitForSeconds(nextFire / 100);
                     }
                 }
             }
