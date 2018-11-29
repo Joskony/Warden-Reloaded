@@ -4,9 +4,9 @@ namespace UI
 {
     public class BombInput : MonoBehaviour
     {
-        private const float M_MAX_SWIPE_TIME = 0.5f; 
+        private const float M_MAX_SWIPE_TIME = 0.75f; 
         private const float M_MIN_SWIPE_DISTANCE = 0.15f;
-        private const float M_MAX_SWIPE_DISTANCE = 0.35f;
+        private const float M_MAX_SWIPE_DISTANCE = 0.45f;
  
         private Vector2 m_startingPosition;
         private float m_startingTime;
