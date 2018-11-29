@@ -26,7 +26,7 @@ namespace Enemies.Emitter
 
         [HideInInspector] public float m_rotationSpeed = 25;
         [HideInInspector] public float m_projectileSpeed = 2;
-        [HideInInspector] public int m_minFireRate = 25;
+        [HideInInspector] public int m_minFireRate = 50;
         [HideInInspector] public int m_maxFireRate = 200;
         private int m_initialMinFireRate;
 
