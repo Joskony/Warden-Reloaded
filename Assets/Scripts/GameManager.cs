@@ -4,6 +4,7 @@ using Enemies.Projectile;
 using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using _Overhead;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        m_bestGameTime = PlayerPrefs.GetFloat("Highscore", m_bestGameTime);
+        m_bestGameTime = PlayerPrefs.GetFloat(Tags.M_HIGHSCORE_STRING, m_bestGameTime);
         StartCoroutine(GameLoop());
     }
 
@@ -74,7 +75,7 @@ public class GameManager : MonoBehaviour
         foreach (Projectile projectile in m_emitterManager.m_ProjectilePool)
             projectile.gameObject.SetActive(false);
         m_emitterManager.m_rotationSpeed = 0;
-        PlayerPrefs.SetFloat("Highscore", m_bestGameTime);
+        PlayerPrefs.SetFloat(Tags.M_HIGHSCORE_STRING, m_bestGameTime);
         yield return new WaitForSeconds(M_GAME_END_DELAY);
         SceneManager.LoadScene(0);
     }

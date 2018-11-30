@@ -9,5 +9,8 @@
     
         // Projectiles
         public static string M_PROJECTILE_TAG = "Projectile";
+        
+        // Highscore
+        public static string M_HIGHSCORE_STRING = "Highscore";
     }
 }
