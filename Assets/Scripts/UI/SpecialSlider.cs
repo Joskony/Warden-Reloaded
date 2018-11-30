@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-
-using Shields;
 using UnityEngine.UI;
+using Shields;
 
 namespace UI
 {
