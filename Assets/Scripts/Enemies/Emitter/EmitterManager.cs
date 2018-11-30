@@ -26,8 +26,8 @@ namespace Enemies.Emitter
 
         [HideInInspector] public float m_rotationSpeed = 25;
         [HideInInspector] public float m_projectileSpeed = 2;
-        [NonSerialized] public int m_minFireRate = 5;
-        [NonSerialized] public int m_maxFireRate = 20;
+        [NonSerialized] public int m_minFireRate = 50;
+        [NonSerialized] public int m_maxFireRate = 200;
 
         [SerializeField] private GameObject m_ProjectileHolder;
         
@@ -82,7 +82,7 @@ namespace Enemies.Emitter
                     {
                         FireNextProjectile(emitterGroups.m_Emitter[a].transform);
                         float nextFire = Random.Range(m_minFireRate, m_maxFireRate);
-                        yield return new WaitForSeconds(nextFire / 10);
+                        yield return new WaitForSeconds(nextFire / 100);
                     }
                 }
             }

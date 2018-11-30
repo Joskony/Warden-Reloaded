@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour
 
     private const float M_ROTATION_SPEED_INCREASE = 2.5f;
     private const float M_PROJECTILE_SPEED_INCREASE = 0.2f;
-    private const int M_FIRE_RATE_INCREASE = 1;
+    private const int M_FIRE_RATE_DECREASE_MIN = 10;
+    private const int M_FIRE_RATE_DECREASE_MAX = 10;
 
     private void Start()
     {
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
         
         InvokeRepeating(nameof(IncreaseRotationSpeed), M_FIRST_DIFFICULTY_INTERVAL, M_FIRST_DIFFICULTY_INTERVAL);
         InvokeRepeating(nameof(IncreaseProjectileSpeed), M_SECOND_DIFFICULTY_INTERVAL, M_SECOND_DIFFICULTY_INTERVAL);
-        InvokeRepeating(nameof(DecreaseFireRate), M_THIRD_DIFFICULTY_INTERVAL, M_THIRD_DIFFICULTY_INTERVAL);
+        InvokeRepeating(nameof(IncreaseFireRate), M_THIRD_DIFFICULTY_INTERVAL, M_THIRD_DIFFICULTY_INTERVAL);
         
         while (m_player.isAlive)
         {
@@ -85,8 +86,12 @@ public class GameManager : MonoBehaviour
         m_emitterManager.m_projectileSpeed += M_PROJECTILE_SPEED_INCREASE;
     }
 
-    public void DecreaseFireRate()
+    public void IncreaseFireRate()
     {
-        m_emitterManager.m_maxFireRate -= M_FIRE_RATE_INCREASE;
+        if (m_emitterManager.m_minFireRate >= 0)
+            m_emitterManager.m_minFireRate -= M_FIRE_RATE_DECREASE_MIN;
+
+        if (m_emitterManager.m_maxFireRate >= 0)
+            m_emitterManager.m_maxFireRate -= M_FIRE_RATE_DECREASE_MAX;
     }
 }
