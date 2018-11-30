@@ -651,7 +651,7 @@ Prefab:
     - target: {fileID: 114954102027429138, guid: c527b0681def444debf4ca4d9eaefcc5,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114836036527777846, guid: c527b0681def444debf4ca4d9eaefcc5,
         type: 2}
@@ -662,6 +662,11 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114954102027429138, guid: c527b0681def444debf4ca4d9eaefcc5,
+        type: 2}
+      propertyPath: m_margin.z
+      value: -158.1379
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c527b0681def444debf4ca4d9eaefcc5, type: 2}
