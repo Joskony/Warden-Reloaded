@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject m_inputBlockingPanel;
 
     private const float M_GAME_START_DELAY = 1f;
-    private const float M_GAME_END_DELAY = 2.5f;
+    private const float M_GAME_END_DELAY = 1f;
 
     private Coroutine m_emitterShootingRoutine;
 
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     private const float M_ROTATION_SPEED_INCREASE = 2.5f;
     private const float M_PROJECTILE_SPEED_INCREASE = 0.2f;
-    private const int M_FIRE_RATE_INCREASE = 10;
+    private const int M_FIRE_RATE_INCREASE = 1;
 
     private void Start()
     {

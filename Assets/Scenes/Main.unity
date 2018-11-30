@@ -214,12 +214,12 @@ Prefab:
     - target: {fileID: 114073192006236986, guid: ccbbfeccd52e94477822cd981098140a,
         type: 2}
       propertyPath: m_minFireRate
-      value: 25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114073192006236986, guid: ccbbfeccd52e94477822cd981098140a,
         type: 2}
       propertyPath: m_maxFireRate
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccbbfeccd52e94477822cd981098140a, type: 2}

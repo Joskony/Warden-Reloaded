@@ -26,15 +26,13 @@ namespace Enemies.Emitter
 
         [HideInInspector] public float m_rotationSpeed = 25;
         [HideInInspector] public float m_projectileSpeed = 2;
-        [HideInInspector] public int m_minFireRate = 50;
-        [HideInInspector] public int m_maxFireRate = 200;
-        private int m_initialMinFireRate;
+        [NonSerialized] public int m_minFireRate = 5;
+        [NonSerialized] public int m_maxFireRate = 20;
 
         [SerializeField] private GameObject m_ProjectileHolder;
         
         private void Start()
         {
-            m_initialMinFireRate = m_minFireRate;
             for (int i = 0; i < m_ProjectilePool.Length; i++)
             {
                 m_ProjectilePool[i] = Instantiate(m_Projectile, m_ProjectileHolder.transform.position, Quaternion.identity, m_ProjectileHolder.transform);
@@ -79,14 +77,12 @@ namespace Enemies.Emitter
             {
                 foreach (EmitterGroups emitterGroups in m_Emitter)
                 {
-                    m_minFireRate = m_initialMinFireRate;
                     System.Random random = new System.Random();
                     foreach (int a in Enumerable.Range(0, emitterGroups.m_Emitter.Length).OrderBy(x => random.Next()))
                     {
-                        float nextFire = Random.Range(m_minFireRate, m_maxFireRate);
-                        yield return new WaitForSeconds(nextFire / 100);
                         FireNextProjectile(emitterGroups.m_Emitter[a].transform);
-                        m_minFireRate = 0;
+                        float nextFire = Random.Range(m_minFireRate, m_maxFireRate);
+                        yield return new WaitForSeconds(nextFire / 10);
                     }
                 }
             }
