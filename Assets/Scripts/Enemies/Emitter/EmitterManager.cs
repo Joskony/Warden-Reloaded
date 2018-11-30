@@ -24,8 +24,8 @@ namespace Enemies.Emitter
         [SerializeField] private Projectile.Projectile m_Projectile;
         public readonly Projectile.Projectile[] m_ProjectilePool = new Projectile.Projectile[128];
 
-        [HideInInspector] public float m_rotationSpeed = 25;
-        [HideInInspector] public float m_projectileSpeed = 2;
+        [NonSerialized] public float m_rotationSpeed = 25;
+        [NonSerialized] public float m_projectileSpeed = 2;
         [NonSerialized] public int m_minFireRate = 50;
         [NonSerialized] public int m_maxFireRate = 200;
 

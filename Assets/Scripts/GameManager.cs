@@ -1,7 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Enemies.Emitter;
 using Enemies.Projectile;
-using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using _Overhead;
@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
     private Coroutine m_emitterShootingRoutine;
 
     private float m_initialTime;
-    [HideInInspector] public float m_currentGameTime;
-    [HideInInspector] public float m_bestGameTime;
+    [NonSerialized] public float m_currentGameTime;
+    [NonSerialized] public float m_bestGameTime;
 
     private const int M_FIRST_DIFFICULTY_INTERVAL = 15;
     private const int M_SECOND_DIFFICULTY_INTERVAL = 30;

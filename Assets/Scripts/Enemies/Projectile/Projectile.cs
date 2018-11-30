@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using _Overhead;
 
 namespace Enemies.Projectile
 {
     public class Projectile : MonoBehaviour
     {
-        public float m_Speed;
+        [NonSerialized] public float m_Speed;
 
         private void FixedUpdate()
         {

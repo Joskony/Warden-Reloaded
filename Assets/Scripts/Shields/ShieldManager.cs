@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Shields
@@ -10,13 +11,13 @@ namespace Shields
 		private bool m_retractInput;
 		private bool m_extendInput;
 		
-		[HideInInspector] public int m_shieldPositionGauge;
+		[NonSerialized] public int m_shieldPositionGauge;
 		private const float M_GAUGE_CHARGE_SPEED = 0.25f;
 		private const int M_SHIELD_POSITION_GAUGE_EXTENDED_THRESHOLD = 25;
 		private const int M_SHIELD_POSITION_GAUGE_RETRACTED_THRESHOLD = -25;
 		
 		public enum ShieldPosition {Default, Extended, Retracted}
-		[HideInInspector] public ShieldPosition m_shieldPosition = ShieldPosition.Default;
+		[NonSerialized] public ShieldPosition m_shieldPosition = ShieldPosition.Default;
 
 		private float m_rotationDirection;
 		private const float M_ROTATION_SPEED = 250.0f;

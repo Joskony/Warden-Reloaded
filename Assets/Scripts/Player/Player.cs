@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using _Overhead;
 
 namespace Player
 {
 	public class Player : MonoBehaviour
 	{
-		[HideInInspector] public bool isAlive = true;
+		[NonSerialized] public bool isAlive = true;
 		
 		private void OnTriggerEnter2D(Collider2D other)
 		{
