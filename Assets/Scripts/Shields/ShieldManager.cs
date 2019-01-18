@@ -20,7 +20,7 @@ namespace Shields
 		[NonSerialized] public ShieldPosition m_shieldPosition = ShieldPosition.Default;
 
 		private float m_rotationDirection;
-		private const float M_ROTATION_SPEED = 250.0f;
+		private const float M_ROTATION_SPEED = 150.0f;
 		public readonly float m_increasedRotationSpeed = 1.25f;
 
 		private void Awake()
