@@ -6,6 +6,13 @@ public class BombInput : MonoBehaviour
 {
     public GameObject m_bomb;
     private int m_amountOfBombs = 3;
+
+    public SpriteRenderer m_playerSpriteRenderer;
+
+    public Sprite m_zero;
+    public Sprite m_one;
+    public Sprite m_two;
+    public Sprite m_three;
     
     public float m_shakeDetectionThreshold;
     public float m_minShakeInterval;
@@ -22,10 +29,12 @@ public class BombInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdatePlayerSprite();
+        
         if (Input.acceleration.sqrMagnitude >= m_sqrShakeDetectionThreshold
             && Time.unscaledTime >= m_timeSinceLastShake + m_minShakeInterval)
         {
-            // UseBomb();
+            UseBomb();
             m_timeSinceLastShake = Time.unscaledTime;
         }
     }
@@ -36,5 +45,30 @@ public class BombInput : MonoBehaviour
         m_amountOfBombs--;
         // m_bombCharges[m_amountOfBombs].SetActive(false);
         m_bomb.SetActive(true);
+    }
+
+    private void UpdatePlayerSprite()
+    {
+        switch (m_amountOfBombs)
+        {
+            case 3:
+                m_playerSpriteRenderer.sprite = m_three;
+                break;
+            case 2:
+                m_playerSpriteRenderer.sprite = m_two;
+                break;
+            case 1:
+                m_playerSpriteRenderer.sprite = m_one;
+                break;
+            default:
+            {
+                if (m_amountOfBombs <= 0)
+                {
+                    m_playerSpriteRenderer.sprite = m_zero;
+                }
+
+                break;
+            }
+        }
     }
 }
