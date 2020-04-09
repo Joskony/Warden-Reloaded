@@ -11,13 +11,15 @@ namespace Shields
 		private bool m_retractInput;
 		private bool m_extendInput;
 		
-		[NonSerialized] public int m_shieldPositionGauge;
+		[HideInInspector] public int m_shieldPositionGauge;
 		private const float M_GAUGE_CHARGE_SPEED = 0.25f;
 		private const int M_SHIELD_POSITION_GAUGE_EXTENDED_THRESHOLD = 25;
 		private const int M_SHIELD_POSITION_GAUGE_RETRACTED_THRESHOLD = -25;
+		[HideInInspector] public uint m_shieldExtendedValue = 50;
+		[HideInInspector] public uint m_shieldRetractedValue = 50;
 		
 		public enum ShieldPosition {Default, Extended, Retracted}
-		[NonSerialized] public ShieldPosition m_shieldPosition = ShieldPosition.Default;
+		[HideInInspector] public ShieldPosition m_shieldPosition = ShieldPosition.Default;
 
 		private float m_rotationDirection;
 		private const float M_ROTATION_SPEED = 150.0f;
@@ -110,6 +112,8 @@ namespace Shields
 			while (m_shieldPositionGauge <= M_SHIELD_POSITION_GAUGE_EXTENDED_THRESHOLD && m_shieldPosition == ShieldPosition.Extended) 
 			{
 				m_shieldPositionGauge++;
+				m_shieldExtendedValue += 2;
+				m_shieldRetractedValue -= 2;
 				yield return new WaitForSeconds (M_GAUGE_CHARGE_SPEED);
 			}
 		}
@@ -119,6 +123,8 @@ namespace Shields
 			while (m_shieldPositionGauge >= M_SHIELD_POSITION_GAUGE_RETRACTED_THRESHOLD && m_shieldPosition == ShieldPosition.Retracted) 
 			{
 				m_shieldPositionGauge--;
+				m_shieldExtendedValue -= 2;
+				m_shieldRetractedValue += 2;
 				yield return new WaitForSeconds (M_GAUGE_CHARGE_SPEED);
 			}
 		}
