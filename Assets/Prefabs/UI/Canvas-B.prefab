@@ -93,7 +93,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &224698769206300376
 RectTransform:
   m_ObjectHideFlags: 0
@@ -393,7 +393,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_shieldManager: {fileID: 0}
-  m_bombInput: {fileID: 0}
   m_bombTexts:
   - {fileID: 1392962015357960099}
   - {fileID: 5536654437780651692}
@@ -491,7 +490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &224137593237044174
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1737,7 +1736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f080d1f47d3ffe74eb9de62a7e84eb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_amountOfBombs: 3
+  m_shieldManager: {fileID: 0}
   m_bomb: {fileID: 0}
 --- !u!1 &3638762776980199632
 GameObject:
@@ -2508,7 +2507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f080d1f47d3ffe74eb9de62a7e84eb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_amountOfBombs: 3
+  m_shieldManager: {fileID: 0}
   m_bomb: {fileID: 0}
 --- !u!1 &6141219245656188625
 GameObject:
