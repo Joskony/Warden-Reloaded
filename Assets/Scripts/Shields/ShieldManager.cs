@@ -25,6 +25,8 @@ namespace Shields
 		private const float M_ROTATION_SPEED = 150.0f;
 		public readonly float m_increasedRotationSpeed = 1.25f;
 
+		public int m_amountOfBombs = 3;
+		
 		private void Awake()
 		{
 			m_shields = GetComponentsInChildren<Shield>();
@@ -112,8 +114,8 @@ namespace Shields
 			while (m_shieldPositionGauge <= M_SHIELD_POSITION_GAUGE_EXTENDED_THRESHOLD && m_shieldPosition == ShieldPosition.Extended) 
 			{
 				m_shieldPositionGauge++;
-				m_shieldExtendedValue += 2;
-				m_shieldRetractedValue -= 2;
+				m_shieldExtendedValue -= 2;
+				m_shieldRetractedValue += 2;
 				yield return new WaitForSeconds (M_GAUGE_CHARGE_SPEED);
 			}
 		}
@@ -123,8 +125,8 @@ namespace Shields
 			while (m_shieldPositionGauge >= M_SHIELD_POSITION_GAUGE_RETRACTED_THRESHOLD && m_shieldPosition == ShieldPosition.Retracted) 
 			{
 				m_shieldPositionGauge--;
-				m_shieldExtendedValue -= 2;
-				m_shieldRetractedValue += 2;
+				m_shieldExtendedValue += 2;
+				m_shieldRetractedValue -= 2;
 				yield return new WaitForSeconds (M_GAUGE_CHARGE_SPEED);
 			}
 		}

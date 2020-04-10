@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 224332429644470060}
   - component: {fileID: 222934624379996544}
   - component: {fileID: 114359728842414484}
+  - component: {fileID: 8967827536764432923}
   m_Layer: 5
   m_Name: Group
   m_TagString: Untagged
@@ -452,6 +453,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8967827536764432923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247908457092220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a52121a78064fa5b0314d0cb59f170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_shieldManager: {fileID: 0}
+  m_bombTexts:
+  - {fileID: 0}
+  m_RetractedText: {fileID: 0}
+  m_ExtendedText: {fileID: 0}
 --- !u!1 &1252108115915856
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +905,7 @@ GameObject:
   - component: {fileID: 114774864548623702}
   - component: {fileID: 114906503082468266}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas-A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2286,8 +2304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f080d1f47d3ffe74eb9de62a7e84eb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_shieldManager: {fileID: 0}
   m_bomb: {fileID: 0}
-  m_bombText: {fileID: 0}
 --- !u!1 &4445146462151528139
 GameObject:
   m_ObjectHideFlags: 0

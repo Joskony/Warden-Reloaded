@@ -360,6 +360,11 @@ PrefabInstance:
       propertyPath: m_bombText
       value: 
       objectReference: {fileID: 814501653}
+    - target: {fileID: 36976046362574101, guid: ce4ab52aa33704e638816ba1b1b8c5d3,
+        type: 3}
+      propertyPath: m_shieldManager
+      value: 
+      objectReference: {fileID: 384090426}
     - target: {fileID: 114177036788207584, guid: ce4ab52aa33704e638816ba1b1b8c5d3,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -780,6 +785,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6391291118010184986, guid: ce4ab52aa33704e638816ba1b1b8c5d3,
+        type: 3}
+      propertyPath: m_shieldManager
+      value: 
+      objectReference: {fileID: 384090426}
     - target: {fileID: 6600967153824048771, guid: ce4ab52aa33704e638816ba1b1b8c5d3,
         type: 3}
       propertyPath: m_shieldManager
@@ -825,6 +835,11 @@ PrefabInstance:
       propertyPath: m_bomb
       value: 
       objectReference: {fileID: 925933888}
+    - target: {fileID: 7406078386996417328, guid: ce4ab52aa33704e638816ba1b1b8c5d3,
+        type: 3}
+      propertyPath: m_shieldManager
+      value: 
+      objectReference: {fileID: 384090426}
     - target: {fileID: 7433052543274304806, guid: ce4ab52aa33704e638816ba1b1b8c5d3,
         type: 3}
       propertyPath: m_textInfo.characterCount

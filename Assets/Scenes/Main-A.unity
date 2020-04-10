@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -388,6 +389,11 @@ PrefabInstance:
     - target: {fileID: 4273125605575458, guid: bedbe93b7345816468786c5ae422b8f1, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 58598539983574558, guid: bedbe93b7345816468786c5ae422b8f1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bedbe93b7345816468786c5ae422b8f1, type: 3}
@@ -815,6 +821,21 @@ PrefabInstance:
     - target: {fileID: 8379250156493293570, guid: c527b0681def444debf4ca4d9eaefcc5,
         type: 3}
       propertyPath: m_bombText
+      value: 
+      objectReference: {fileID: 982765803}
+    - target: {fileID: 8379250156493293570, guid: c527b0681def444debf4ca4d9eaefcc5,
+        type: 3}
+      propertyPath: m_shieldManager
+      value: 
+      objectReference: {fileID: 89678353}
+    - target: {fileID: 8967827536764432923, guid: c527b0681def444debf4ca4d9eaefcc5,
+        type: 3}
+      propertyPath: m_shieldManager
+      value: 
+      objectReference: {fileID: 89678353}
+    - target: {fileID: 8967827536764432923, guid: c527b0681def444debf4ca4d9eaefcc5,
+        type: 3}
+      propertyPath: m_bombTexts.Array.data[0]
       value: 
       objectReference: {fileID: 982765803}
     m_RemovedComponents: []
