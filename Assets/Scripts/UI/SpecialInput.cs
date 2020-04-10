@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 
 using Shields;
+using TMPro;
 
 namespace UI
 { 
@@ -14,7 +15,7 @@ namespace UI
         
         [SerializeField] private Sprite m_toggleOff;
         [SerializeField] private Sprite m_toggleOn;
-
+        
         private void Awake()
         {
             m_InputImage = gameObject.GetComponent<Image>();

@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         m_emitterManager.m_rotationSpeed = 0;
         PlayerPrefs.SetFloat(Tags.M_HIGHSCORE_STRING, m_bestGameTime);
         yield return new WaitForSeconds(M_GAME_END_DELAY);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
     public void IncreaseRotationSpeed()
