@@ -578,6 +578,11 @@ PrefabInstance:
       propertyPath: m_shieldManager
       value: 
       objectReference: {fileID: 89678353}
+    - target: {fileID: 114774864548623702, guid: c527b0681def444debf4ca4d9eaefcc5,
+        type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114810212237302534, guid: c527b0681def444debf4ca4d9eaefcc5,
         type: 3}
       propertyPath: m_shieldManager
