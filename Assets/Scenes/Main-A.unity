@@ -339,18 +339,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7e78a79c406b48cea911553e686f677, type: 3}
---- !u!114 &982765803 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4560186527994999032, guid: c527b0681def444debf4ca4d9eaefcc5,
-    type: 3}
-  m_PrefabInstance: {fileID: 2090129160}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1338225370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -863,6 +851,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7508401152796257469, guid: c527b0681def444debf4ca4d9eaefcc5,
+        type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8379250156493293570, guid: c527b0681def444debf4ca4d9eaefcc5,
         type: 3}
       propertyPath: m_bomb
@@ -872,12 +865,24 @@ PrefabInstance:
         type: 3}
       propertyPath: m_bombText
       value: 
-      objectReference: {fileID: 982765803}
+      objectReference: {fileID: 0}
     - target: {fileID: 8379250156493293570, guid: c527b0681def444debf4ca4d9eaefcc5,
         type: 3}
       propertyPath: m_shieldManager
       value: 
       objectReference: {fileID: 89678353}
+    - target: {fileID: 8379250156493293570, guid: c527b0681def444debf4ca4d9eaefcc5,
+        type: 3}
+      propertyPath: m_toggleOff
+      value: 
+      objectReference: {fileID: 21300000, guid: 8c65dd882b27441ee8add3a8958adff7,
+        type: 3}
+    - target: {fileID: 8379250156493293570, guid: c527b0681def444debf4ca4d9eaefcc5,
+        type: 3}
+      propertyPath: m_toggleOn
+      value: 
+      objectReference: {fileID: 21300000, guid: 348307ac6f1794466ab9654e20886b75,
+        type: 3}
     - target: {fileID: 8967827536764432923, guid: c527b0681def444debf4ca4d9eaefcc5,
         type: 3}
       propertyPath: m_shieldManager
@@ -887,7 +892,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_bombTexts.Array.data[0]
       value: 
-      objectReference: {fileID: 982765803}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c527b0681def444debf4ca4d9eaefcc5, type: 3}
 --- !u!114 &2090129161 stripped
