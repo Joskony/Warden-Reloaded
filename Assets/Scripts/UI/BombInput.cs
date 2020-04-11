@@ -43,7 +43,7 @@ namespace UI
         {
             if (m_shieldManager.m_amountOfBombs <= 0 || m_bomb.activeSelf) return;
             m_shieldManager.m_amountOfBombs--;
-            m_bombCharges[m_shieldManager.m_amountOfBombs].SetActive(false);
+            if (m_bombCharges.Length != 0) m_bombCharges[m_shieldManager.m_amountOfBombs].SetActive(false);
             m_bomb.SetActive(true);
         }
 

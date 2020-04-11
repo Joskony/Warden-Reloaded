@@ -364,6 +364,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 36976046362574101, guid: ce4ab52aa33704e638816ba1b1b8c5d3,
         type: 3}
+      propertyPath: m_bombCharges.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 36976046362574101, guid: ce4ab52aa33704e638816ba1b1b8c5d3,
+        type: 3}
       propertyPath: m_bomb
       value: 
       objectReference: {fileID: 925933888}
@@ -1032,6 +1037,11 @@ PrefabInstance:
     - target: {fileID: 7184575045563610238, guid: ce4ab52aa33704e638816ba1b1b8c5d3,
         type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406078386996417328, guid: ce4ab52aa33704e638816ba1b1b8c5d3,
+        type: 3}
+      propertyPath: m_bombCharges.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7406078386996417328, guid: ce4ab52aa33704e638816ba1b1b8c5d3,
