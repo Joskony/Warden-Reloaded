@@ -2,20 +2,19 @@
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Telemetry : MonoBehaviour
+public class TelemetryB : MonoBehaviour
 {
     [SerializeField] private DataTracker m_dataTracker;
     
-    private const string GoogleFormBaseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfiq9MhRmGel9PFQHqydUu4egND-l2lvqBjIvnQJtZUzTR0UQ/";
+    private const string GoogleFormBaseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeBA3qh2Tkv_J4EpD_VC8GUVoerwjfL0UH7akTW05w2eLQD_Q/";
 
-    private const string GformCustomTimeStamp = "entry.1273675796";
-    private const string GformUserId = "entry.47680143";
-    private const string GformAttemptDuration = "entry.1439297271";
-    private const string GformMovementLeftPressed = "entry.1049173437";
-    private const string GformMovementRightPressed = "entry.1824591726";
-    private const string GformBombButtonsPressed = "entry.2112181685";
-    private const string GformRetractedPressed = "entry.532483446";
-    private const string GformExtendedPressed = "entry.488609001";
+    private const string GformUserId = "entry.163445355";
+    private const string GformAttemptDuration = "entry.321057223";
+    private const string GformMovementLeftPressed = "entry.914844437";
+    private const string GformMovementRightPressed = "entry.464725180";
+    private const string GformBombButtonsPressed = "entry.1278176303";
+    private const string GformRetractedPressed = "entry.1003309508";
+    private const string GformExtendedPressed = "entry.183858019";
 
     public void SendData()
     {
@@ -25,7 +24,6 @@ public class Telemetry : MonoBehaviour
     private IEnumerator SubmitGoogleForm()
     {
         var form = new WWWForm();
-        form.AddField(GformCustomTimeStamp, System.DateTime.Now.ToString()); // Exact format needs to be decided
         form.AddField(GformUserId, SystemInfo.deviceUniqueIdentifier); // Is already a string
         form.AddField(GformAttemptDuration, m_dataTracker.GetAttemptDuration().ToString()); // Needs to be a string, since float can't be send through www requests
         form.AddField(GformMovementLeftPressed, m_dataTracker.GetMovementLeftPressed()); // Can be send as an int

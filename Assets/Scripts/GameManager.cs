@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     private const int M_FIRE_RATE_DECREASE_MAX = 10;
 
     [SerializeField] private DataTracker m_dataTracker;
-    [SerializeField] private Telemetry m_telemetry;
+    [SerializeField] private TelemetryB m_telemetryB;
     
     private void Start()
     {
@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetFloat(Tags.M_HIGHSCORE_STRING, m_bestGameTime);
         
         m_dataTracker.SetAttemptDuration(m_currentGameTime);
-        m_telemetry.SendData();
+        if (m_telemetryB != null) m_telemetryB.SendData();
         
         yield return new WaitForSeconds(M_GAME_END_DELAY);
         

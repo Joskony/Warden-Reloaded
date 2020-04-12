@@ -306,6 +306,11 @@ PrefabInstance:
       propertyPath: m_dataTracker
       value: 
       objectReference: {fileID: 892556572}
+    - target: {fileID: 114601374053842608, guid: c88bf65734e56bf4a8fb710d5d1ecc9e,
+        type: 3}
+      propertyPath: m_telemetryB
+      value: 
+      objectReference: {fileID: 1549586422}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c88bf65734e56bf4a8fb710d5d1ecc9e, type: 3}
 --- !u!1001 &547367624
@@ -1536,7 +1541,7 @@ GameObject:
   - component: {fileID: 1549586421}
   - component: {fileID: 1549586422}
   m_Layer: 0
-  m_Name: Telemetry
+  m_Name: TelemetryB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
