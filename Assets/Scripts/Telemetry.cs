@@ -4,6 +4,8 @@ using UnityEngine.Networking;
 
 public class Telemetry : MonoBehaviour
 {
+    [SerializeField] private DataTracker m_dataTracker;
+    
     private const string GoogleFormBaseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfiq9MhRmGel9PFQHqydUu4egND-l2lvqBjIvnQJtZUzTR0UQ/";
 
     private const string GformCustomTimeStamp = "entry.1273675796";
@@ -23,14 +25,14 @@ public class Telemetry : MonoBehaviour
     private IEnumerator SubmitGoogleForm()
     {
         var form = new WWWForm();
-        form.AddField(GformCustomTimeStamp, -1);
-        form.AddField(GformUserId, - 2);
-        form.AddField(GformAttemptDuration, -3);
-        form.AddField(GformMovementLeftPressed, -4);
-        form.AddField(GformMovementRightPressed, -5);
-        form.AddField(GformBombButtonsPressed, -6);
-        form.AddField(GformRetractedPressed, -7);
-        form.AddField(GformExtendedPressed, -8);
+        form.AddField(GformCustomTimeStamp, System.DateTime.Now.ToString()); // Exact format needs to be decided
+        form.AddField(GformUserId, SystemInfo.deviceUniqueIdentifier); // Is already a string
+        form.AddField(GformAttemptDuration, m_dataTracker.GetAttemptDuration().ToString()); // Needs to be a string, since float can't be send through www requests
+        form.AddField(GformMovementLeftPressed, m_dataTracker.GetMovementLeftPressed()); // Can be send as an int
+        form.AddField(GformMovementRightPressed, m_dataTracker.GetMovementRightPressed()); // Can be send as an int
+        form.AddField(GformBombButtonsPressed, m_dataTracker.GetBombButtonsPressed()); // Can be send as an int
+        form.AddField(GformRetractedPressed, m_dataTracker.GetRetractedPressed()); // Can be send as an int
+        form.AddField(GformExtendedPressed, m_dataTracker.GetExtendedPressed()); // Can be send as an int
 
         const string urlGoogleFormResponse = GoogleFormBaseUrl + "formResponse";
         using (var www = UnityWebRequest.Post(urlGoogleFormResponse, form))
