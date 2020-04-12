@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     private const int M_FIRE_RATE_DECREASE_MIN = 10;
     private const int M_FIRE_RATE_DECREASE_MAX = 10;
 
+    [SerializeField] private Telemetry m_telemetry;
+    
     private void Start()
     {
         m_bestGameTime = PlayerPrefs.GetFloat(Tags.M_HIGHSCORE_STRING, m_bestGameTime);
@@ -76,7 +78,11 @@ public class GameManager : MonoBehaviour
             projectile.gameObject.SetActive(false);
         m_emitterManager.m_rotationSpeed = 0;
         PlayerPrefs.SetFloat(Tags.M_HIGHSCORE_STRING, m_bestGameTime);
+        
+        m_telemetry.SendData();
+        
         yield return new WaitForSeconds(M_GAME_END_DELAY);
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
